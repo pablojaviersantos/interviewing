@@ -33,8 +33,4 @@ public class GeneradorCSV {
         return  (random.nextInt(bound) /*- 10*/);
     }
 
-    public static void main(String[] args) {
-        // Llamar a la función para generar el CSV
-        generateCsv("datos.csv", 10,'a',',',3); // Cambia el número de filas según sea necesario
-    }
 }

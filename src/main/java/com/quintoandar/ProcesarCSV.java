@@ -61,7 +61,7 @@ public class ProcesarCSV {
 
 
         Connection connection = DriverManager.getConnection(
-                "jdbc:postgresql://localhost:5432/postgres",
+                "jdbc:postgresql://192.168.0.54:5432/postgres",
                 "postgres",
                 "pablo1984"
         );
@@ -91,11 +91,6 @@ public class ProcesarCSV {
                 statement.executeUpdate();
             }
         }
-    }
-
-    public static void main(String[] args) {
-        // Llamar a la función para procesar el CSV
-        processCsv("datos.csv"); // Cambia el nombre del archivo según sea necesario
     }
 
     // Clase para almacenar estadísticas de cada etiqueta
