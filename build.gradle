@@ -1,10 +1,44 @@
+buildscript {
+    repositories {
+        mavenCentral()
+        gradlePluginPortal()
+    }
+    dependencies {
+        classpath "gradle.plugin.com.github.johnrengelman:shadow:7.1.2"
+    }
+}
+
 plugins {
+    id 'com.github.johnrengelman.shadow' version '7.1.2'
     id 'java'
 }
 
 repositories {
     mavenCentral()
 }
+
+jar {
+    manifest {
+        attributes(
+                'Main-Class': 'com.quintoandar.Application'
+        )
+    }
+}
+
+task customFatJar(type: Jar) {
+    manifest {
+        attributes 'Main-Class': 'com.quintoandar.Application'
+    }
+    archiveBaseName = 'Ejercicio5toAndar'
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+    from { configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) } }
+    with jar
+}
+//
+//
+//application {
+//    mainClassName = 'com.quintoandar.Application'
+//}
 
 dependencies {
     testImplementation platform('org.junit:junit-bom:5.9.1')
