@@ -1,4 +1,4 @@
-package com.quintoandar;
+package com.quintoandar.cronjobs.libs;
 
 import java.io.FileWriter;
 import java.io.IOException;

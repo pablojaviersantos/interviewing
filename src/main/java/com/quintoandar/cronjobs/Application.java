@@ -1,10 +1,11 @@
-package com.quintoandar;
+package com.quintoandar.cronjobs;
 
 import java.util.HashSet;
 import java.util.logging.Logger;
 import java.util.logging.Level;
-import static com.quintoandar.GeneradorCSV.generateCsv;
-import static com.quintoandar.ProcesarCSV.processCsv;
+import static com.quintoandar.cronjobs.libs.GeneradorCSV.generateCsv;
+import static com.quintoandar.cronjobs.libs.ProcesarCSV.processCsv;
+
 
 
 public class Application {
@@ -50,8 +51,7 @@ public class Application {
             separator       =  args[4].charAt(0);
             totalLetters    = Integer.parseInt(args[5]);
         }
-
-
+        String prueba =args[0];
         /* */
         switch (args[0]){
             case "generar":

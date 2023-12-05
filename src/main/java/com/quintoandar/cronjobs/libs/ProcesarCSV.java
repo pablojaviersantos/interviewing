@@ -1,4 +1,4 @@
-package com.quintoandar;
+package com.quintoandar.cronjobs.libs;
 
 import com.opencsv.CSVReader;
 import com.opencsv.exceptions.CsvException;
@@ -12,9 +12,11 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+
 public class ProcesarCSV {
 
     public static void processCsv(String filePath) {
+
 
         try (CSVReader reader = new CSVReader(new FileReader(filePath))) {
             // Leer todas las filas del CSV
@@ -59,11 +61,11 @@ public class ProcesarCSV {
 
     private static void insertStatistics(Map<String, LabelStats> labelStatsMap) throws SQLException {
 
-
+       //TODO 6 Elliminar este bloque de codigo y utilizar la coneccion nueva.
         Connection connection = DriverManager.getConnection(
-                "jdbc:postgresql://192.168.0.54:5432/postgres",
-                "postgres",
-                "pablo1984"
+                "jdbc:postgresql://"+System.getenv("POSTGRES_HOST")+":"+System.getenv("POSTGRES_PORT")+"/"+System.getenv("POSTGRES_DB"),
+                System.getenv("POSTGRES_USER"),
+                System.getenv("POSTGRES_PASSWORD")
         );
 
         // Obtener la fecha actual
