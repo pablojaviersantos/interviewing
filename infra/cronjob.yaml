@@ -1,0 +1,41 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: manejador-csv
+spec:
+  schedule: "*/1 * * * *"
+  successfulJobsHistoryLimit: 10
+  failedJobsHistoryLimit: 1
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+            - name: manejador-csv
+              image: localhost:5000/manejador_csv
+              imagePullPolicy: Always
+              env:
+                - name: FUNCION
+                  value: "all"
+                - name: RUTA
+                  value: "datos.csv"
+                - name: TOTALROWS
+                  value: "10000"
+                - name: LETTER
+                  value: "a"
+                - name: SEPARATOR
+                  value: ","
+                - name: TOTALLETTERS
+                  value: "26"
+                - name: POSTGRES_DB
+                  value: "postgres"
+                - name: POSTGRES_HOST
+                  value: "192.168.0.54"
+                - name: POSTGRES_PASSWORD
+                  value: "pablo1984"
+                - name: POSTGRES_PORT
+                  value: "5432"
+                - name: POSTGRES_USER
+                  value: "postgres"
+          restartPolicy: Never
+      backoffLimit: 4
