@@ -51,8 +51,7 @@ public class Application {
             separator       =  args[4].charAt(0);
             totalLetters    = Integer.parseInt(args[5]);
         }
-        String prueba =args[0];
-        /* */
+
         switch (args[0]){
             case "generar":
                 logger.log(Level.INFO,"Proceso de generacion de archivos Iniciado");
