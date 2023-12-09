@@ -18,35 +18,31 @@ repositories {
 }
 
 jar {
+    destinationDirectory = file('./container')
     manifest {
         attributes(
-                'Main-Class': 'com.quintoandar.Application'
+                'Main-Class': 'com.quintoandar.cronjobs.Application'
         )
     }
 }
 
 task customFatJar(type: Jar) {
     manifest {
-        attributes 'Main-Class': 'com.quintoandar.Application'
+        attributes 'Main-Class': 'com.quintoandar.cronjobs.Application'
     }
-    archiveBaseName = 'Ejercicio5toAndar'
+    archiveBaseName = 'csvProcessor'
+    destinationDirectory = file('./infra')
     duplicatesStrategy = DuplicatesStrategy.EXCLUDE
     from { configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) } }
     with jar
 }
-//
-//
-//application {
-//    mainClassName = 'com.quintoandar.Application'
-//}
 
 dependencies {
     testImplementation platform('org.junit:junit-bom:5.9.1')
     testImplementation 'org.junit.jupiter:junit-jupiter'
     implementation 'com.opencsv:opencsv:5.5'
     implementation 'org.postgresql:postgresql:42.2.23'
-    //implementation 'org.springframework.boot:spring-boot-starter-web'
-    //testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
 }
 
 test {
