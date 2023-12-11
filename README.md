@@ -8,6 +8,8 @@ Generar Csv  : el cual genera un archivo .csv conformando valores de manera rand
 
 Procesar Csv : lee el archivo anteriomente mencionado, realiza los calculos y los guarda en la base con datos estadisticos .
 
+Se puede ejecutar con una funcionalidad deseada('generar' o 'procesar') o ambas ('all') en su primer variable de entorno(ENV FUNCION)
+
 Actualmente tiene un cronjob que se ejecuta por minuto .
 
 ## Requerimientos.
