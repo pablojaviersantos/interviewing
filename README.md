@@ -99,3 +99,5 @@ Todo se realizo en mi notebook personal con windows 10.
 
 
        kubectl apply -f .\infra\cronjob.yaml
+
+7. Update
