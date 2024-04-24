@@ -90,7 +90,6 @@ Todo se realizo en mi notebook personal con windows 10.
 
    PUSHING
 
-
        docker push localhost:5000/manejador_csv
 
 
