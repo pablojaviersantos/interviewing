@@ -26,7 +26,6 @@ jar {
     }
 }
 
-
 task customFatJar(type: Jar) {
     manifest {
         attributes 'Main-Class': 'com.quintoandar.cronjobs.Application'
