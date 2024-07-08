@@ -85,13 +85,10 @@ Todo se realizo en mi notebook personal con windows 10.
    
    TAGGING:
 
-
        docker tag manejador_csv:v1 localhost:5000/manejador_csv
 
 
    PUSHING
-
-
        docker push localhost:5000/manejador_csv
 
 
@@ -103,5 +100,4 @@ Todo se realizo en mi notebook personal con windows 10.
 7. Update
 8. Update
 9. Update
-
 
