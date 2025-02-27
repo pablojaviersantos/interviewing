@@ -40,6 +40,7 @@ public class ProcesarCSV {
                 }
             }
 
+
             // Imprimir las estadísticas por etiqueta
             labelStatsMap.forEach((label, stats) -> {
                 System.out.println("Label: " + label);
