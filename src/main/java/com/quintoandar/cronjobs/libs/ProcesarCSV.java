@@ -22,6 +22,7 @@ public class ProcesarCSV {
             // Leer todas las filas del CSV
             List<String[]> rows = reader.readAll();
 
+
             // Mapa para almacenar los datos agrupados por etiqueta
             Map<String, LabelStats> labelStatsMap = new HashMap<>();
 
