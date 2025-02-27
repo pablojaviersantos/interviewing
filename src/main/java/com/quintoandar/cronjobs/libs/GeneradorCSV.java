@@ -7,6 +7,7 @@ import java.util.Random;
 public class GeneradorCSV {
 
     public static void generateCsv (String filePath, int totalRows, char letter,char separator,int totalLetters) {
+
         try (FileWriter writer = new FileWriter(filePath)){
             // Escribir la cabecera del CSV
             writer.append("label").append(separator).append("valor\n");
