@@ -26,6 +26,7 @@ public class ProcesarCSV {
             // Mapa para almacenar los datos agrupados por etiqueta
             Map<String, LabelStats> labelStatsMap = new HashMap<>();
 
+
             // Procesar cada fila del CSV
             for (String[] row : rows) {
                 if (row.length == 2 && !row[0].equalsIgnoreCase("label")) {
